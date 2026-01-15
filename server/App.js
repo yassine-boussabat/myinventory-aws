@@ -1,9 +1,18 @@
+// Load environment variables
+require("dotenv").config();
+
 // module imports
 const express = require("express");
-const app = express();
+const cors = require("cors");
 const bodyParser = require("body-parser");
-const port = process.env.port || 4000;
+const app = express();
+const port = process.env.PORT || 8080;
 
+// Import database pool
+const pool = require("./src/modules/pool");
+
+// Middleware
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -18,6 +27,11 @@ app.use("/api/auth", authRoute);
 app.use("/api/login", loginRoute);
 app.use("/api/signup", signupRoute);
 app.use("/api/categories", categoriesRoute);
+
+// Health check endpoint for ALB
+app.get("/health", (req, res) => {
+    res.status(200).json({ status: "healthy" });
+});
 
 // admin route
 app.get("/admin", (req, res)=>{

@@ -2,10 +2,11 @@
   "name": "myinventory",
   "version": "1.0.0",
   "description": "This project is about a reliable inventory keeping web application which is easy to use and free of cost.",
-  "main": "App.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
@@ -28,3 +30,4 @@
     "nodemon": "^2.0.20"
   }
 }
+
