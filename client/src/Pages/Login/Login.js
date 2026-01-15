@@ -9,7 +9,7 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../../State";
 import useAuth from "../../Hooks/useAuth";
 
-const LOGIN_URL = "/api/login";
+const LOGIN_URL = `${process.env.REACT_APP_API_URL}/api/login`;
 
 function Login() {
     let navigate = useNavigate();

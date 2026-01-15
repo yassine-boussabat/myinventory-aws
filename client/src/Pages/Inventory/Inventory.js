@@ -26,8 +26,8 @@ import axios from "axios";
 import Loader from "../../Components/Loaders/Loader-FS";
 import { PDFDocument, rgb, StandardFonts, PageSizes } from "pdf-lib";
 
-const INVENTORY_URL = "/api/auth/inventory";
-const CATEGORY_URL = "/api/categories";
+const INVENTORY_URL = `${process.env.REACT_APP_API_URL}/api/auth/inventory`;
+const CATEGORY_URL = `${process.env.REACT_APP_API_URL}/api/categories`;
 
 function Inventory() {
     // CHECK IF THE USER IS LOGGED IN, OTHERWISE REDIRECT TO LOGIN PAGE

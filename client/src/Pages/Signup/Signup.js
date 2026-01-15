@@ -18,7 +18,7 @@ import { bindActionCreators } from "redux";
 import { useDispatch } from "react-redux";
 import { actionCreators } from "../../State";
 
-const SIGNUP_URL = "/api/signup";
+const SIGNUP_URL = `${process.env.REACT_APP_API_URL}/api/signup`;
 
 function Signup() {
     let navigate = useNavigate();
